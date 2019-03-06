@@ -1,0 +1,7 @@
+# This file makes git keep this directory even if it is empty.
+# (By default git stores only files effectively ignoring empty directories).
+#
+# This directory is important for IntelliJ IDEA.
+# IDEA doesn't create this directory automatically when importing maven project,
+# later it has problem when creating (JUnit) tests.
+# Tested with IntelliJ IDEA Community Edition 2018.3.5
