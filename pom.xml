@@ -15,6 +15,7 @@
         <module>coding-exercise-spring-simple</module>
         <module>coding-exercise-rest-jpa</module>
         <module>coding-exercise-plain-java</module>
+        <module>coding-exercise-kotlin</module>
     </modules>
 
     <properties>
