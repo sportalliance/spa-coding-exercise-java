@@ -1,4 +1,4 @@
-package com.magicline.codingexercise.plain;
+package spa.exercise.plain;
 
 public class PlainJavaApp {
 

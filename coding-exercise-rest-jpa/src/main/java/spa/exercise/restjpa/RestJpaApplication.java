@@ -1,4 +1,4 @@
-package com.magicline.codingexercise.restjpa;
+package spa.exercise.restjpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.magicline.codingexercise.simple;
+package spa.exercise.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
