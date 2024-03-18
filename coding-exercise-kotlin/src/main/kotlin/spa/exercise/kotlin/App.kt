@@ -1,4 +1,4 @@
-package spa
+package spa.exercise.kotlin
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -9,4 +9,3 @@ class App
 fun main(args: Array<String>) {
 	SpringApplication.run(App::class.java, *args)
 }
-
