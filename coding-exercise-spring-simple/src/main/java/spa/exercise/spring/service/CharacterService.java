@@ -12,7 +12,6 @@ import java.util.List;
 public class CharacterService {
 
     private RestTemplate restTemplate;
-    private List<Character> characterList = new ArrayList<>();
 
     public CharacterService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -37,37 +36,5 @@ public class CharacterService {
             return response.getResults().get(0);
         }
         return null;
-    }
-
-    public Character createCharacter(Character character) {
-        // SWAPI doesn't support POST, so we'll just add to our local list
-        characterList.add(character);
-        return character;
-    }
-
-    public Character updateCharacter(int id, Character character) {
-        // SWAPI doesn't support PUT, so we'll just update in our local list
-        for (int i = 0; i < characterList.size(); i++) {
-            if (characterList.get(i).getName().equals(character.getName())) {
-                characterList.set(i, character);
-                return character;
-            }
-        }
-        return null;
-    }
-
-    public void deleteCharacter(int id) {
-        // SWAPI doesn't support DELETE, so we'll remove from our local list
-        for (int i = 0; i < characterList.size(); i++) {
-            Character c = characterList.get(i);
-            if (c.getUrl() != null && c.getUrl().contains(String.valueOf(id))) {
-                characterList.remove(i);
-                break;
-            }
-        }
-    }
-
-    public List<Character> getLocalCharacters() {
-        return characterList;
     }
 }

@@ -33,31 +33,6 @@ public class CharacterController {
         return c;
     }
 
-    @PostMapping("/character")
-    public Character addCharacter(@RequestBody Character character) {
-        return characterService.createCharacter(character);
-    }
-
-    @PutMapping("/character/{id}")
-    public Character updateCharacter(@PathVariable int id, @RequestBody Character character) {
-        Character updated = characterService.updateCharacter(id, character);
-        if (updated == null) {
-            System.out.println("Update failed");
-        }
-        return updated;
-    }
-
-    @DeleteMapping("/character/{id}")
-    public String deleteCharacter(@PathVariable int id) {
-        characterService.deleteCharacter(id);
-        return "Character deleted";
-    }
-
-    @GetMapping("/local-characters")
-    public List<Character> getLocalCharacters() {
-        return characterService.getLocalCharacters();
-    }
-
     @GetMapping("/test")
     public String test() {
         return "API is working!";
