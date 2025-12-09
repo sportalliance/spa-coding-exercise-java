@@ -26,11 +26,13 @@ public class CharacterController {
 
     @GetMapping("/search")
     public Character searchCharacter(@RequestParam String name) {
+        try {
         Character c = characterService.getCharacterByName(name);
-        if (c == null) {
-            System.out.println("Character not found!");
-        }
         return c;
+        } catch (Exception e) {
+            System.out.println("Character not found!");
+            return null;
+        }
     }
 
     @GetMapping("/test")

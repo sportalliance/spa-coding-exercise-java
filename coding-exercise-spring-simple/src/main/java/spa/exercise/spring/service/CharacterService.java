@@ -34,7 +34,8 @@ public class CharacterService {
         SwapiResponse response = restTemplate.getForObject(url, SwapiResponse.class);
         if (response.getResults().size() > 0) {
             return response.getResults().get(0);
+        } else {
+            throw new RuntimeException("Character not found!");
         }
-        return null;
     }
 }
