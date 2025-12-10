@@ -19,11 +19,6 @@ public class CharacterController {
         return characterService.getAllCharacters();
     }
 
-    @GetMapping("/character/{id}")
-    public Character getCharacter(@PathVariable int id) {
-        return characterService.getCharacterById(id);
-    }
-
     @GetMapping("/search")
     public Character searchCharacter(@RequestParam String name) {
         try {
@@ -33,6 +28,25 @@ public class CharacterController {
             System.out.println("Character not found!");
             return null;
         }
+    }
+
+    @PostMapping("/character")
+    public Character addCharacter(@RequestBody Character character) {
+        return characterService.createCharacter(character);
+    }
+
+    @PutMapping("/character/{id}")
+    public Character updateCharacter(@PathVariable int id, @RequestBody Character character) {
+        Character updated = characterService.updateCharacter(id, character);
+        if (updated == null) {
+            System.out.println("Update failed");
+        }
+        return updated;
+    }
+
+    @GetMapping("/local-characters")
+    public List<Character> getLocalCharacters() {
+        return characterService.getLocalCharacters();
     }
 
     @GetMapping("/test")
